@@ -3,6 +3,7 @@ package main.kotlin
 import java.io.File
 import java.math.BigInteger
 import java.security.MessageDigest
+import java.util.Comparator
 
 /**
  * Reads lines from the given input txt file.
@@ -66,7 +67,7 @@ fun String.getDigit(index: Int, wordDigit: Map<String, Int>): Int {
       return value
     }
   }
-  throw IllegalArgumentException("cannot find digit")
+  throw IllegalStateException("cannot be here")
 }
 
 inline fun <T> Iterable<T>.productOf(selector: (T) -> Int): Int {
