@@ -3,7 +3,6 @@ package main.kotlin
 import java.io.File
 import java.math.BigInteger
 import java.security.MessageDigest
-import java.util.Comparator
 
 /**
  * Reads lines from the given input txt file.
@@ -13,6 +12,12 @@ fun readInput(dayId: String, profile: String) = File(
   "Day${dayId}_$profile.txt"
 )
   .readLines()
+
+fun readAsText(dayId: String, profile: String) = File(
+  "src/main/resources/day$dayId",
+  "Day${dayId}_$profile.txt"
+)
+  .readText()
 
 /**
  * Converts string to md5 hash.
@@ -81,5 +86,4 @@ inline fun <T> Iterable<T>.productOf(selector: (T) -> Int): Int {
   }
   return product
 }
-
 
